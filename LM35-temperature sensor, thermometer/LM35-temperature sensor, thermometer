@@ -1,0 +1,24 @@
+ LM35-temperature sensor, thermometer
+
+#include <mega32.h>
+#include <stdio.h> // library baray sprintf
+#include <delay.h>
+ 
+
+ char th[20];
+int themp;
+int themp2;
+
+
+
+ 
+while (1)
+      {
+       
+        themp=read_adc(0); // read_adc , baray khandan meghdar sensor  
+      themp2 = themp/2.054 ;
+      sprintf(th, "Themp = %d " , themp2);
+      lcd_puts(th);
+      delay_ms(500);
+      lcd_clear();
+      }
